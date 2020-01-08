@@ -14,15 +14,12 @@ const AllFireFighters = props => {
   const sendFireFightersToApi = async () => {
     const resp = await axios.post('https://localhost:5001/api/FireFighter', {
       fullName: fullName,
-      stationId: stationId,
+      stationId: parseInt(stationId),
       rank: rank,
     })
 
     setFireFighters(prev => {
-      return {
-        ...prev,
-        fireFighters: [...prev.fireFighters.concat(resp.data)],
-      }
+      return [...prev.concat(resp.data)]
     })
   }
 
