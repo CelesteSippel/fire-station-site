@@ -1,9 +1,11 @@
 import React from 'react'
 import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom'
 import NewStation from './pages/NewStation'
-import Page2 from './pages/Page2'
+
 import HomePage from './pages/HomePage'
 import NotFound from './pages/NotFound'
+import AllStations from './pages/AllStations'
+import AllFireFighters from './pages/AllFireFighters'
 
 const App = () => {
   return (
@@ -16,18 +18,24 @@ const App = () => {
               <Link to="/">Go Home</Link>
             </li>
             <li>
-              <Link to="/1">Station</Link>
+              <Link to="/station/new"> Create Station</Link>
             </li>
             <li>
-              <Link to="/2">Page 2</Link>
+              <Link to="/station/">All Stations</Link>
+            </li>
+            <li>
+              <Link to="/fireFighter/">
+                All Firefighters/Create Firefighters
+              </Link>
             </li>
           </ul>
         </nav>
       </header>
       <Switch>
         <Route exact path="/" component={HomePage}></Route>
-        <Route exact path="/1" component={NewStation}></Route>
-        <Route exact path="/2" component={Page2}></Route>
+        <Route exact path="/station/new" component={NewStation}></Route>
+        <Route exact path="/station/station" component={AllStations}></Route>
+        <Route exact path="/fireFighter" component={AllFireFighters}></Route>
         <Route path="*" component={NotFound}></Route>
       </Switch>
     </Router>
