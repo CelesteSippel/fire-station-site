@@ -21,7 +21,7 @@ const App = () => {
               <Link to="/station/new"> Create Station</Link>
             </li>
             <li>
-              <Link to="/station/">All Stations</Link>
+              <Link to="/AllStations/">All Stations</Link>
             </li>
             <li>
               <Link to="/fireFighter/">
@@ -34,7 +34,7 @@ const App = () => {
       <Switch>
         <Route exact path="/" component={HomePage}></Route>
         <Route exact path="/station/new" component={NewStation}></Route>
-        <Route exact path="/station/station" component={AllStations}></Route>
+        <Route exact path="/AllStations" component={AllStations}></Route>
         <Route exact path="/fireFighter" component={AllFireFighters}></Route>
         <Route path="*" component={NotFound}></Route>
       </Switch>

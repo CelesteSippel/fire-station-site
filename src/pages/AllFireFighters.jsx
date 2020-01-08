@@ -14,7 +14,8 @@ const AllFireFighters = props => {
   const sendFireFightersToApi = async () => {
     const resp = await axios.post('https://localhost:5001/api/FireFighter', {
       fullName: fullName,
-      stationId: props.match.params.id,
+      stationId: stationId,
+      rank: rank,
     })
 
     setFireFighters(prev => {
